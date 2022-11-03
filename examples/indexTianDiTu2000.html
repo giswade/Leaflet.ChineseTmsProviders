@@ -74,24 +74,24 @@
         "影像": image,
     }
 
-    var gridImg = '../data/png/1.png'
-    var bounds = [
-            [90, 360],
-            [-90, 0],
-            ]
-    var i =0
-    var gridLayer
-    setInterval(()=>{
-        gridLayer && map.removeLayer(gridLayer)
-        gridImg=`../data/png/${i++}.png`
-        gridLayer = L.imageOverlay(
-            gridImg,
-            bounds,
-            {
-                opacity: 0.5,      
-            }
-        ).addTo(map)
-    },1000)
+//     var gridImg = '../data/png/1.png'
+//     var bounds = [
+//             [90, 360],
+//             [-90, 0],
+//             ]
+//     var i =0
+//     var gridLayer
+//     setInterval(()=>{
+//         gridLayer && map.removeLayer(gridLayer)
+//         gridImg=`../data/png/${i++}.png`
+//         gridLayer = L.imageOverlay(
+//             gridImg,
+//             bounds,
+//             {
+//                 opacity: 0.5,      
+//             }
+//         ).addTo(map)
+//     },1000)
 
     var overlayLayers = {
 
