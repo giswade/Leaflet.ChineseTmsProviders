@@ -62,7 +62,41 @@ L.TileLayer.ChinaProvider = L.TileLayer.extend({
 	},
 });
 
-L.TileLayer.ChinaProvider.providers = {
+L.TileLayer.ChinaProvider.providers = { 
+        //现在的路径
+	TianDiTu_w: { //天地图web墨卡托投影3857
+		Normal: {
+			Map: 'https://t{s}.tianditu.gov.cn/vec_w/wmts?layer=vec&style=default&tilematrixset=w&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+			Annotion: 'https://t{s}.tianditu.gov.cn/cva_w/wmts?layer=cva&style=default&tilematrixset=w&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+		},
+		Satellite: {
+			Map: 'https://t{s}.tianditu.gov.cn/img_w/wmts?layer=img&style=default&tilematrixset=w&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+			Annotion: 'https://t{s}.tianditu.gov.cn/cia_w/wmts?layer=cia&style=default&tilematrixset=w&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+		},
+		Terrain: {
+			Map: 'https://t{s}.tianditu.gov.cn/ter_w/wmts?layer=ter&style=default&tilematrixset=w&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+			Annotion: 'https://t{s}.tianditu.gov.cn/cta_w/wmts?layer=cta&style=default&tilematrixset=w&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+		},
+		Subdomains: ['0', '1', '2', '3', '4', '5', '6', '7'],
+		key: ""
+	},
+	TianDiTu_c: { //天地图经纬度投影4326,也可以自定义为4490
+		Normal: {
+			Map: 'https://t{s}.tianditu.gov.cn/vec_c/wmts?layer=vec&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+			Annotion: 'https://t{s}.tianditu.gov.cn/cva_c/wmts?layer=cva&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+		},
+		Satellite: {//Realm全球境界服务
+			Map: 'https://t{s}.tianditu.gov.cn/img_c/wmts?layer=img&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+			Annotion: 'https://t{s}.tianditu.gov.cn/cia_c/wmts?layer=cia&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+			Realm: 'http://t{s}.tianditu.com/ibo_c/wmts?layer=ibo&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&TileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+		},
+		Terrain: {
+			Map: 'https://t{s}.tianditu.gov.cn/ter_c/wmts?layer=ter&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+			Annotion: 'https://t{s}.tianditu.gov.cn/cta_c/wmts?layer=cta&style=default&tilematrixset=c&Service=WMTS&Request=GetTile&Version=1.0.0&Format=tiles&tileMatrix={z}&TileCol={x}&TileRow={y}&tk={key}',
+		},
+		Subdomains: ['0', '1', '2', '3', '4', '5', '6', '7'],
+		key: "174705aebfe31b79b3587279e211cb9a"
+	},
     TianDiTu: {
         Normal: {
             Map: "//t{s}.tianditu.gov.cn/DataServer?T=vec_w&X={x}&Y={y}&L={z}&tk={key}",
